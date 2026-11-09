@@ -51,7 +51,3 @@
 .scene-card:hover,.scene-card:focus-visible,.scattered:hover,.scattered:focus-visible{transform:none;translate:none;filter:none}
 .esia-evidence,.esia-evidence:hover,.esia-evidence:focus-visible{transform:rotate(-15deg)}
 .mychart-evidence,.mychart-evidence:hover,.mychart-evidence:focus-visible{transform:rotate(8deg)}
-.case-lens{position:fixed;width:84px;height:84px;border-radius:50%;overflow:hidden;pointer-events:none;z-index:100;box-shadow:inset 0 0 0 1px #29211688,inset 0 0 9px #fff2cd99,0 3px 10px #0005;background:#c8b78f;isolation:isolate}
-.case-lens:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 33% 22%,#fff7dc50,transparent 43%),radial-gradient(circle,transparent 54%,#735b3033 95%);box-shadow:inset 0 0 6px #fff6da66;pointer-events:none}
-.case-lens-copy{position:absolute;transform-origin:0 0;pointer-events:none!important;margin:0!important;filter:url("#lens-curve")}
-@media(hover:none),(pointer:coarse){.case-lens{display:none!important}}
