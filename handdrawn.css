@@ -65,3 +65,47 @@ body,h1,h2,h3,p,a,button,small,span,strong,em,.case h1,.case-detail h2,.chapter 
 @media(min-width:661px) and (max-width:1000px){.desk-dock{left:10px;gap:19px}.desk-dock a{width:85px}.dock-label{font-size:12px}.case-folder{left:24%;top:12%;width:57%;height:65%}.folder-header h1{font-size:3.1cqw}.archive-statement p{font-size:1.25cqw}.scene-card strong{font-size:1.7cqw}}
 @media(max-width:660px){.desk-dock{left:50%;bottom:10px;gap:0;padding:10px 5px;background:#fcfaf1f5;border:1px solid #333;border-radius:6px;max-width:calc(100vw - 16px);width:365px;justify-content:space-around}.desk-dock a{width:auto;height:25px;padding:0;transform-origin:center bottom}.dock-label{font-size:9px}.desk-dock a:hover,.desk-dock a:focus-visible{transform:translateY(-3px) scale(1.12)}.desk-typewriter{display:none}.case-folder{inset:auto;width:calc(100% - 25px);height:auto}.folder-header h1{font-size:29px;letter-spacing:-1px}.archive-statement strong{font-size:23px}.archive-statement p{font-size:14px}.archive-statement .signature{font-size:22px}.archive-statement em{font-size:12px}.scene-card strong{font-size:21px}.scene-card>span:not(.case-number):not(.card-diagram){font-size:12px}.scene-card small,.case-number,.paper-eyebrow{font-size:9px}.folder-footer{font-size:6px}.scattered{inset:auto;width:calc(50% - 14px);height:145px}}
 @media(prefers-reduced-motion:reduce){.desk-dock a:hover,.desk-dock a:focus-visible{transform:none}}
+/* Light handwritten headings, restrained editorial text, and an arced text menu. */
+:root{--sketch:'Chalkboard SE','Comic Sans MS',cursive;--typewriter:'Courier New',Courier,monospace}
+body{font-family:Georgia,serif}h1,h2,h3,.case h1,.case-detail h2,.chapter h2,.overview h2{font-family:var(--sketch);font-weight:400}
+.folder-header h1{font:400 3.65cqw/1.15 var(--sketch);letter-spacing:-.09cqw}.folder-header{border:0;border-bottom:1.5px solid #38352d;border-radius:0 0 45% 3% / 0 0 3% 1%;padding:1% 0 4%}.archive-statement strong{font:400 2.1cqw/1.3 var(--sketch);color:#7d463b}.archive-statement p{font:1.2cqw/1.7 Georgia,serif}.archive-statement .signature{font:1.9cqw var(--sketch)}.archive-statement em{font:.9cqw var(--sketch)}.scene-card strong{font:400 1.8cqw/1.3 var(--sketch)}.scene-card>span:not(.case-number):not(.card-diagram){font:1cqw/1.5 Georgia,serif}.scene-card small{font:.85cqw var(--sketch)}.paper-eyebrow,.case-number,.folder-footer{font-family:'Courier New',monospace}.scene-card{border-radius:3px 8px 4px 9px / 7px 3px 9px 3px}.field-note p,.coffee-caption,.scene-hint{font-family:var(--sketch)}
+.desk-dock{left:24px;border:0;padding:22px 0;gap:21px}.desk-dock:before{content:'';position:absolute;inset:0 auto 0 -9px;width:35px;border-left:1.3px solid #75684c88;border-radius:50%;pointer-events:none}.desk-dock a{--arc:0px;translate:var(--arc) 0;padding-left:8px}.desk-dock a:nth-child(2),.desk-dock a:nth-child(5){--arc:10px}.desk-dock a:nth-child(3),.desk-dock a:nth-child(4){--arc:17px}.dock-label{font:16px var(--sketch);color:#49473f}.desk-dock a:hover .dock-label,.desk-dock a:focus-visible .dock-label{color:#a24d3b}.desk-dock a:hover,.desk-dock a:focus-visible{transform:scale(1.2)}
+@media(min-width:661px) and (max-width:1000px){.desk-dock{left:14px}.dock-label{font-size:14px}.folder-header h1{font-size:3.65cqw}.archive-statement p{font-size:1.3cqw}}
+@media(max-width:660px){.desk-dock{left:50%;padding:12px 10px;gap:0;border:1px solid #635b4e;border-radius:45% 45% 12px 12px / 12px 12px 10px 10px}.desk-dock:before{display:none}.desk-dock a{translate:none!important;padding:0}.dock-label{font-size:11px}.folder-header h1{font-size:34px;letter-spacing:-1px}.archive-statement strong{font-size:25px}.archive-statement p{font-size:15px}.archive-statement .signature{font-size:24px}.archive-statement em{font-size:13px}.scene-card strong{font-size:24px}.scene-card>span:not(.case-number):not(.card-diagram){font-size:13px}.scene-card small{font-size:12px}}
+
+/* Destination labels appear beside the numbered folder tabs. */
+.archive-tabs a { position: relative; }
+.archive-tabs a::after {
+  content: attr(data-destination);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 7px);
+  transform: translateY(-50%);
+  padding: 6px 10px;
+  background: #fffdf6;
+  border: 1px solid #38352d;
+  border-radius: 4px 7px 5px 3px;
+  box-shadow: 2px 2px 0 #38352d26;
+  color: #292720;
+  font: 14px/1.25 var(--sketch);
+  white-space: nowrap;
+  visibility: hidden;
+  pointer-events: none;
+}
+.archive-tabs a:focus-visible { z-index: 1; }
+.archive-tabs a:focus-visible::after { visibility: visible; }
+@media (hover: hover) {
+  .archive-tabs a:hover { z-index: 1; }
+  .archive-tabs a:hover::after { visibility: visible; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .desk-dock a:hover, .desk-dock a:focus-visible { transform: none; }
+}
+.folder-header h1 em { font: inherit; }
+@media (min-width: 661px) {
+  .folder-header { margin-bottom: 0; padding-bottom: 2%; }
+  .folder-header h1 { margin: 1% 0; }
+  .folder-content { padding-top: 4%; }
+  .archive-statement strong { margin: 5% 0; }
+  .scene-card { padding: 3.5% 5%; }
+}
