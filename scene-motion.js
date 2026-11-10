@@ -40,3 +40,35 @@ if (scene && motionButton) {
     link.addEventListener('blur', reset);
   }
 }
+
+if (scene) {
+  let opening = false;
+  for (const tab of scene.querySelectorAll('.archive-tabs a[data-case-title]')) {
+    tab.addEventListener('click', async (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (reducedMotion.matches || pausedByVisitor) return;
+      event.preventDefault();
+      if (opening) return;
+      opening = true;
+      const page = document.createElement('div');
+      page.className = 'archive-page-turn';
+      page.setAttribute('aria-hidden', 'true');
+      const label = document.createElement('small');
+      label.textContent = 'OPENING CASE FILE / ' + tab.textContent;
+      const title = document.createElement('strong');
+      title.textContent = tab.dataset.caseTitle;
+      page.append(label, title);
+      scene.querySelector('.scene-plane').append(page);
+      try {
+        await page.animate([
+          { transform: 'perspective(900px) rotateY(0deg)', opacity: 1 },
+          { transform: 'perspective(900px) rotateY(-85deg)', opacity: 0.2 }
+        ], { duration: 360, easing: 'ease-in' }).finished;
+      } finally {
+        page.remove();
+        opening = false;
+        window.location.assign(tab.href);
+      }
+    });
+  }
+}
