@@ -109,3 +109,9 @@ body{font-family:Georgia,serif}h1,h2,h3,.case h1,.case-detail h2,.chapter h2,.ov
   .archive-statement strong { margin: 5% 0; }
   .scene-card { padding: 3.5% 5%; }
 }
+
+/* Match the Case files page's handwritten family throughout the site. */
+body,
+body * {
+  font-family: var(--sketch) !important;
+}
