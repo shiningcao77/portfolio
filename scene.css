@@ -51,3 +51,25 @@
 .scene-card:hover,.scene-card:focus-visible,.scattered:hover,.scattered:focus-visible{transform:none;translate:none;filter:none}
 .esia-evidence,.esia-evidence:hover,.esia-evidence:focus-visible{transform:rotate(-15deg)}
 .mychart-evidence,.mychart-evidence:hover,.mychart-evidence:focus-visible{transform:rotate(8deg)}
+
+/* Lift the whole case card gently when it is inspected. */
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .scene:not(.motion-paused) .scene-card:hover,
+ .scene:not(.motion-paused) .scene-card:focus-visible{
+  transform:rotate(-1deg) scale(1.045);
+  translate:0 -3px;
+  filter:brightness(1.08);
+ }
+ .scene:not(.motion-paused) .esia-evidence:hover,
+ .scene:not(.motion-paused) .esia-evidence:focus-visible{
+  transform:rotate(-12deg) scale(1.045);
+  translate:0 -5px;
+  filter:brightness(1.08);
+ }
+ .scene:not(.motion-paused) .mychart-evidence:hover,
+ .scene:not(.motion-paused) .mychart-evidence:focus-visible{
+  transform:rotate(5deg) scale(1.045);
+  translate:0 -5px;
+  filter:brightness(1.08);
+ }
+}
