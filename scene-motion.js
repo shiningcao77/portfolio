@@ -31,7 +31,7 @@ if (scene && motionButton) {
   });
 
   for (const link of scene.querySelectorAll('.scene-card, .scattered')) {
-    const title = link.querySelector('strong')?.textContent || link.querySelector('span')?.textContent;
+    const title = link.querySelector('strong')?.textContent || link.querySelector('span:last-child')?.textContent;
     const inspect = () => { statusLine.textContent = 'INSPECT / ' + title.trim() + ' — open case ↗'; };
     const reset = () => { statusLine.textContent = 'INVESTIGATE / Select a case file'; };
     link.addEventListener('pointerenter', inspect);
@@ -58,7 +58,7 @@ if (scene) {
       const title = document.createElement('strong');
       title.textContent = tab.dataset.caseTitle;
       page.append(label, title);
-      scene.querySelector('.scene-plane').append(page);
+      scene.querySelector('.case-folder').append(page);
       try {
         await page.animate([
           { transform: 'perspective(900px) rotateY(0deg)', opacity: 1 },
@@ -71,4 +71,13 @@ if (scene) {
       }
     });
   }
+}
+
+
+const lamp = document.querySelector('.lamp-shade');
+if (scene && lamp) {
+  lamp.addEventListener('click', () => {
+    const dimmed = scene.classList.toggle('is-dim');
+    lamp.setAttribute('aria-pressed', String(!dimmed));
+  });
 }
