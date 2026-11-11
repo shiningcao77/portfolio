@@ -81,3 +81,42 @@ if (scene && lamp) {
     lamp.setAttribute('aria-pressed', String(!dimmed));
   });
 }
+
+const dock = document.querySelector('.desk-dock');
+const penToggle = document.querySelector('.ink-menu-toggle');
+const desk = document.querySelector('.scene');
+if (dock && penToggle && desk) {
+  let compact = false;
+  let menuOpen = false;
+
+  function renderDock() {
+    dock.classList.toggle('is-compact', compact);
+    dock.hidden = compact && !menuOpen;
+    penToggle.hidden = !compact;
+    penToggle.setAttribute('aria-expanded', String(menuOpen));
+    penToggle.setAttribute('aria-label', menuOpen ? 'Close navigation' : 'Open navigation');
+  }
+
+  penToggle.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    renderDock();
+  });
+  dock.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && compact) {
+      menuOpen = false;
+      renderDock();
+      penToggle.focus();
+    }
+  });
+  dock.addEventListener('click', event => {
+    if (event.target.closest('a')) {
+      menuOpen = false;
+      renderDock();
+    }
+  });
+  new IntersectionObserver(([entry]) => {
+    compact = !entry.isIntersecting;
+    menuOpen = false;
+    renderDock();
+  }).observe(desk);
+}

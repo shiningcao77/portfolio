@@ -115,3 +115,34 @@ body,
 body * {
   font-family: var(--sketch) !important;
 }
+
+/* The Contents spread uses a typewritten archive style. */
+:root { --sketch: 'Courier New', Courier, monospace; }
+.folder-header h1 { font-weight: 400; font-size: 3.2cqw; }
+.ink-menu-toggle {
+  position: fixed;
+  z-index: 32;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%) rotate(12deg);
+  width: 44px;
+  height: 112px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #302d26;
+  cursor: pointer;
+}
+.ink-menu-toggle svg { width: 100%; height: 100%; }
+.ink-menu-toggle:focus-visible { outline: 2px solid #8b4c3a; outline-offset: 5px; }
+.desk-dock[hidden], .ink-menu-toggle[hidden] { display: none; }
+.desk-dock.is-compact { left: 80px; background: #f7f3e9f5; padding: 18px; border: 1px solid #75684c66; border-radius: 12px; }
+.desk-camera { position: absolute; right: 3%; top: 80%; width: 14%; transform: rotate(9deg); }
+.desk-camera svg { width: 100%; display: block; }
+.desk-camera span { display: block; text-align: center; font-size: .7cqw; color: #6b6254; }
+@media (max-width: 660px) {
+  .folder-header h1 { font-size: 28px; }
+  .ink-menu-toggle { top: auto; bottom: 14px; left: 12px; transform: rotate(15deg); height: 75px; width: 35px; }
+  .desk-dock.is-compact { left: 55%; bottom: 28px; padding: 10px; }
+  .desk-camera { display: none; }
+}
