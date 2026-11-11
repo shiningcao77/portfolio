@@ -250,3 +250,40 @@ body.compact-menu-open::after { visibility: visible; opacity: 1; }
 body.compact-menu-open::after { background: #171b16bd; }
 .desk-dock.is-compact .dock-label { color: #fff9eb; text-shadow: 0 1px 5px #000; }
 .desk-dock.is-compact a:hover .dock-label { text-decoration: underline; text-underline-offset: 5px; }
+
+/* Leave the bottom of the desk open for the full-width case line. */
+.archive-statement .signature {
+  color: #b32c23;
+  font-size: clamp(22px, 2.45cqw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+.folder-paper .ink-investigator {
+  position: absolute;
+  display: block;
+  left: auto;
+  right: 7%;
+  top: 31%;
+  width: 34%;
+  height: 40%;
+  pointer-events: none;
+}
+@media (min-width: 661px) {
+  .desk-dock:not(.is-compact) { top: 44%; }
+  .case-folder { top: 6%; left: 23%; width: 61%; height: 61%; }
+  .folder-content { padding-top: 3%; }
+  .archive-statement { max-width: 57%; }
+  .archive-statement strong { font-size: 2cqw; margin: 3% 0; }
+  .confidential-stamp { bottom: 17%; }
+  .case-clothesline { left: 2%; width: 96%; top: 73%; height: 25%; gap: 4%; }
+  .hanging-case strong { font-size: max(10px, .82cqw); }
+}
+@media (max-width: 660px) {
+  .folder-paper .ink-investigator {
+    position: static;
+    width: min(145px, 55%);
+    height: auto;
+    margin: 8px 0 0 auto;
+  }
+  .confidential-stamp { bottom: 54px; }
+}
