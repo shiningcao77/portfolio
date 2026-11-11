@@ -84,8 +84,7 @@ if (scene && lamp) {
 
 const dock = document.querySelector('.desk-dock');
 const penToggle = document.querySelector('.ink-menu-toggle');
-const desk = document.querySelector('.scene');
-if (dock && penToggle && desk) {
+if (dock && penToggle) {
   let compact = false;
   let menuOpen = false;
 
@@ -144,10 +143,16 @@ if (dock && penToggle && desk) {
       renderDock();
     }
   });
-  new IntersectionObserver(([entry]) => {
+  function updateDockForScroll() {
+    const nextCompact = window.scrollY > 4;
+    if (nextCompact === compact) return;
     clearTimeout(closeTimer);
-    compact = !entry.isIntersecting;
+    compact = nextCompact;
     menuOpen = false;
     renderDock();
-  }).observe(desk);
+  }
+
+  window.addEventListener('scroll', updateDockForScroll, { passive: true });
+  window.addEventListener('pageshow', updateDockForScroll);
+  updateDockForScroll();
 }
