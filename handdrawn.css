@@ -146,3 +146,11 @@ body * {
   .desk-dock.is-compact { left: 55%; bottom: 28px; padding: 10px; }
   .desk-camera { display: none; }
 }
+
+.desk-camera {
+  left: 6%;
+  right: auto;
+  top: 5%;
+  width: 14%;
+  transform: rotate(-10deg);
+}

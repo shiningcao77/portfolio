@@ -97,6 +97,34 @@ if (dock && penToggle && desk) {
     penToggle.setAttribute('aria-label', menuOpen ? 'Close navigation' : 'Open navigation');
   }
 
+  let closeTimer;
+
+  function showMenu() {
+    clearTimeout(closeTimer);
+    if (compact) {
+      menuOpen = true;
+      renderDock();
+    }
+  }
+
+  function scheduleClose() {
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      if (dock.contains(document.activeElement) || penToggle === document.activeElement) return;
+      menuOpen = false;
+      renderDock();
+    }, 250);
+  }
+
+  for (const surface of [penToggle, dock]) {
+    surface.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'mouse') showMenu();
+    });
+    surface.addEventListener('pointerleave', scheduleClose);
+    surface.addEventListener('focusin', showMenu);
+    surface.addEventListener('focusout', scheduleClose);
+  }
+
   penToggle.addEventListener('click', () => {
     menuOpen = !menuOpen;
     renderDock();
@@ -115,6 +143,7 @@ if (dock && penToggle && desk) {
     }
   });
   new IntersectionObserver(([entry]) => {
+    clearTimeout(closeTimer);
     compact = !entry.isIntersecting;
     menuOpen = false;
     renderDock();
