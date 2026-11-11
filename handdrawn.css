@@ -294,7 +294,7 @@ body.compact-menu-open::after { background: #171b16bd; }
   justify-content: space-between;
   gap: 12px;
 }
-.folder-header h1 { font-weight: 700; }
+.folder-header h1 { font-weight: 400; }
 .folder-header .confidential-stamp {
   display: inline-block;
   position: static;
@@ -306,8 +306,13 @@ body.compact-menu-open::after { background: #171b16bd; }
 }
 .archive-statement .signature { font-weight: 400; }
 @media (min-width: 661px) {
-  .case-folder { height: 57%; }
-  .folder-paper { padding-top: 4%; }
+  .case-folder { top: 8%; height: auto; }
+  .folder-paper { position: relative; padding: 4% 5% 2%; }
+  .folder-footer {
+    position: static;
+    margin-top: 14px;
+    padding-top: 10px;
+  }
   .case-clothesline { top: 70%; height: 28%; }
 }
 @media (max-width: 660px) {
