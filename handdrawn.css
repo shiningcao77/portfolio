@@ -154,3 +154,64 @@ body * {
   width: 14%;
   transform: rotate(-10deg);
 }
+
+/* A collected case archive, with every project clipped to one rope. */
+.scene { min-height: 890px; aspect-ratio: 1.45; max-height: none; }
+.case-folder { left: 26%; top: 10%; width: 55%; height: 53%; }
+.folder-content { display: block; }
+.archive-statement { display: block; max-width: 90%; }
+.archive-statement strong { font-size: 2.1cqw; margin: 4% 0; }
+.archive-statement p { max-width: 43ch; font-size: 1.15cqw; }
+.archive-statement .signature { margin-top: 3%; }
+.archive-statement em { margin-top: 2%; }
+.coffee-object { left: 7%; right: auto; top: 5%; width: 11%; height: 15%; }
+.coffee-caption { left: 6%; right: auto; top: 23%; }
+.ink-investigator { left: auto; right: 1%; top: 1%; width: 17%; height: 24%; }
+.case-clothesline { position: absolute; left: 20%; top: 71%; width: 77%; height: 26%; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4%; padding: 22px 2% 0; }
+.case-rope { position: absolute; left: 0; top: -12px; width: 100%; height: 46px; pointer-events: none; }
+.hanging-case { position: relative; display: flex; flex-direction: column; gap: 9px; min-width: 0; height: 90%; padding: 10px 10px 13px; background: #fffdf7; color: #38342a; border: 1.4px solid #38342a; border-radius: 2px 5px 3px 2px; transform: rotate(-5deg); transform-origin: 50% 0; box-shadow: 3px 4px 0 #38342a18; transition: transform .25s ease; }
+.hanging-case:nth-of-type(2) { transform: rotate(4deg); margin-top: 8px; }
+.hanging-case:nth-of-type(3) { transform: rotate(-3deg); margin-top: 8px; }
+.hanging-case:nth-of-type(4) { transform: rotate(5deg); }
+.hanging-case img, .uat-print { width: 100%; height: 80%; min-height: 0; object-fit: contain; border: 1px solid #80745e55; background: #f1eee5; }
+.hanging-case strong { font-size: .78cqw; font-weight: 400; line-height: 1.4; }
+.clothes-peg { position: absolute; z-index: 2; width: 12px; height: 30px; left: calc(50% - 6px); top: -19px; background: #e1d4b6; border: 1px solid #665b43; border-radius: 2px; transform: rotate(3deg); }
+.clothes-peg::after { content: ''; position: absolute; top: 4px; bottom: 4px; left: 50%; border-left: 1px solid #665b43; }
+.uat-print { display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 10px; text-align: center; }
+.uat-print small { font-size: .65cqw; color: #526757; }
+.uat-print div { font-size: .7cqw; }
+.uat-print b { font-size: 1cqw; font-weight: 400; }
+.uat-print span { font-size: 1.5cqw; color: #8b4c3a; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .hanging-case:hover { transform: rotate(0deg) scale(1.04); }
+}
+.hanging-case:focus-visible { outline: 2px solid #8b4c3a; outline-offset: 5px; }
+@media (min-width: 661px) and (max-width: 1000px) {
+  .scene { min-height: 850px; }
+  .case-folder { left: 26%; top: 10%; width: 55%; height: 53%; }
+  .archive-statement p { font-size: 1.3cqw; }
+}
+@media (max-width: 660px) {
+  .scene { min-height: 0; }
+  .case-folder { inset: auto; width: calc(100% - 25px); height: auto; }
+  .archive-statement { max-width: none; }
+  .archive-statement strong { font-size: 24px; }
+  .archive-statement p { font-size: 14px; }
+  .case-clothesline { position: relative; inset: auto; width: 100%; height: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 18px; margin-top: 15px; padding: 25px 5px 0; }
+  .hanging-case { height: 190px; margin-top: 0 !important; }
+  .hanging-case strong { font-size: 9px; }
+  .uat-print small, .uat-print div { font-size: 8px; }
+  .uat-print b { font-size: 12px; }
+  .uat-print span { font-size: 18px; }
+  .hanging-case:nth-of-type(n+3)::before { content: ''; position: absolute; left: -10px; right: -10px; top: -9px; border-top: 1px solid #665b43; }
+}
+@media (min-width: 661px) {
+  .scene { min-height: 740px; aspect-ratio: 1.7; }
+  .case-folder { height: 62%; }
+  .case-clothesline { top: 76%; height: 22%; }
+}
+@media (min-width: 661px) {
+  .case-clothesline { grid-template-rows: minmax(0, 1fr); }
+  .hanging-case { height: 100%; min-height: 0; }
+  .hanging-case img, .uat-print { flex: 1; height: 0; }
+}
