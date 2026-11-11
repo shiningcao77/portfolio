@@ -1,6 +1,5 @@
 const scene = document.querySelector('.scene');
 const motionButton = document.querySelector('.motion-toggle');
-const statusLine = document.querySelector('.desk-status');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 let pausedByVisitor = false;
 try {
@@ -30,15 +29,6 @@ if (scene && motionButton) {
     updateMotion();
   });
 
-  for (const link of scene.querySelectorAll('.scene-card, .scattered')) {
-    const title = link.querySelector('strong')?.textContent || link.querySelector('span:last-child')?.textContent;
-    const inspect = () => { statusLine.textContent = 'INSPECT / ' + title.trim() + ' — open case ↗'; };
-    const reset = () => { statusLine.textContent = 'INVESTIGATE / Select a case file'; };
-    link.addEventListener('pointerenter', inspect);
-    link.addEventListener('pointerleave', reset);
-    link.addEventListener('focus', inspect);
-    link.addEventListener('blur', reset);
-  }
 }
 
 if (scene) {
@@ -69,6 +59,19 @@ if (scene) {
         opening = false;
         window.location.assign(tab.href);
       }
+    });
+  }
+}
+
+for (const card of document.querySelectorAll('.hanging-case')) {
+  const front = card.querySelector('.case-front');
+  const back = card.querySelector('.case-back');
+  for (const button of card.querySelectorAll('.case-flip')) {
+    button.addEventListener('click', () => {
+      const flipped = card.classList.toggle('is-flipped');
+      front.inert = flipped;
+      back.inert = !flipped;
+      (flipped ? back : front).querySelector('.case-flip').focus({ preventScroll: true });
     });
   }
 }
