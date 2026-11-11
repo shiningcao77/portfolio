@@ -91,6 +91,7 @@ if (dock && penToggle && desk) {
 
   function renderDock() {
     dock.classList.toggle('is-compact', compact);
+    document.body.classList.toggle('compact-menu-open', compact && menuOpen);
     dock.hidden = compact && !menuOpen;
     penToggle.hidden = !compact;
     penToggle.setAttribute('aria-expanded', String(menuOpen));
@@ -121,9 +122,10 @@ if (dock && penToggle && desk) {
       if (event.pointerType === 'mouse') showMenu();
     });
     surface.addEventListener('pointerleave', scheduleClose);
-    surface.addEventListener('focusin', showMenu);
     surface.addEventListener('focusout', scheduleClose);
   }
+
+  dock.addEventListener('focusin', showMenu);
 
   penToggle.addEventListener('click', () => {
     menuOpen = !menuOpen;

@@ -215,3 +215,38 @@ body * {
   .hanging-case { height: 100%; min-height: 0; }
   .hanging-case img, .uat-print { flex: 1; height: 0; }
 }
+
+/* A single warm page stock, right-hand file tabs, and an unframed pen menu. */
+:root { --page-stock: #f7f3e9; }
+body, body.scene-home, .scene, .scene-wrap, .desk-controls,
+.work, .case, .about, .overview, .card, .evidence, .compare-panel,
+.feature, .comparison, .artifact, .finding-grid p, .demo-fields div,
+.work::before { background-color: var(--page-stock); background-image: none; }
+.coffee-object { width: 8%; height: 11%; left: 7%; top: 5%; }
+.coffee-caption { left: 6%; top: 18%; font-size: .65cqw; }
+.ink-investigator { left: 3%; right: auto; top: 78%; width: 15%; height: 20%; }
+.case-folder { left: 23%; top: 8%; width: 64%; height: 64%; }
+.archive-tabs { left: 100%; right: auto; width: 6%; }
+.archive-tabs a { border: 1.5px solid #222; border-left: 0; border-radius: 0 6px 6px 0; }
+.archive-tabs a:hover { translate: 4px 0; }
+.archive-tabs a::after { left: auto; right: calc(100% + 7px); }
+.confidential-stamp { position: absolute; right: 7%; bottom: 15%; padding: 7px 11px; color: #9e4036; border: 3px double currentColor; font-size: 1.6cqw; font-weight: 700; letter-spacing: .05em; transform: rotate(-12deg); opacity: .8; pointer-events: none; }
+body::after { content: ''; position: fixed; inset: 0; z-index: 29; background: #171b1633; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease; }
+body.compact-menu-open::after { visibility: visible; opacity: 1; }
+.desk-dock.is-compact { background: transparent; border: 0; border-radius: 0; box-shadow: none; backdrop-filter: none; }
+.desk-dock.is-compact::before { display: none; }
+.desk-dock.is-compact .dock-label { color: #24251f; text-shadow: 0 0 8px #f7f3e9, 0 0 16px #f7f3e9; }
+@media (min-width: 661px) and (max-width: 1000px) {
+  .case-folder { left: 23%; top: 8%; width: 64%; height: 64%; }
+}
+@media (max-width: 660px) {
+  .case-folder { inset: auto; width: calc(100% - 27px); margin-left: 0; margin-right: 27px; height: auto; }
+  .archive-tabs { left: 100%; width: 27px; }
+  .confidential-stamp { font-size: 12px; right: 7%; bottom: 48px; padding: 5px 8px; }
+  .folder-paper { padding-bottom: 100px; }
+  .desk-dock.is-compact { background: transparent; border: 0; }
+}
+@media (prefers-reduced-motion: reduce) { body::after { transition: none; } }
+body.compact-menu-open::after { background: #171b16bd; }
+.desk-dock.is-compact .dock-label { color: #fff9eb; text-shadow: 0 1px 5px #000; }
+.desk-dock.is-compact a:hover .dock-label { text-decoration: underline; text-underline-offset: 5px; }
