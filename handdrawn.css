@@ -297,7 +297,7 @@ body.compact-menu-open::after { background: #171b16bd; }
   background-origin: border-box;
 }
 @media (min-width: 661px) {
-  .case-folder { top: 8%; height: auto; transform: rotate(-2.6deg); }
+  .case-folder { top: 8%; height: auto; transform: rotate(-2.6deg) scale(1.08); transform-origin: center top; }
   .folder-paper { position: relative; padding: 4% 5% 2%; }
   .folder-footer {
     position: static;
@@ -400,6 +400,7 @@ body.compact-menu-open::after { background: #171b16bd; }
 .case-preview .schematic { align-self: start; }
 .hanging-case:nth-of-type(5) { transform: rotate(-4deg); }
 @media (min-width: 951px) {
+  .case-folder { transform: rotate(-2.6deg) scale(1.12); }
   .case-clothesline { top: 65%; height: 33%; }
   .case-clothesline:has(.nittany-trade-card) { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2.5%; }
   .scene { min-height: 865px; }
