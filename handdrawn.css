@@ -434,6 +434,7 @@ body.compact-menu-open::after { background: #171b16bd; }
 
 @media (max-width: 660px) {
   .case-clothesline { grid-template-columns: minmax(0, 1fr); }
+  .synthetic-uat-card .case-preview { width: min(100%, 220px); justify-self: center; }
   .hanging-case { height: 264px; }
   .hanging-case:nth-of-type(2)::before {
     content: '';
