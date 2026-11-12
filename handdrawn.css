@@ -423,3 +423,11 @@ body.compact-menu-open::after { background: #171b16bd; }
   .hanging-case { height: 222px; }
   .brand-role { max-width: 19ch; }
 }
+
+.case-front-copy .case-blurb {
+  font-size: clamp(11px, .95vw, 15px);
+}
+
+@media (max-width: 660px) {
+  .hanging-case { height: 264px; }
+}
