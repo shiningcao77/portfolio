@@ -401,16 +401,16 @@ body.compact-menu-open::after { background: #171b16bd; }
 .hanging-case:nth-of-type(5) { transform: rotate(-4deg); }
 @media (min-width: 951px) {
   .case-folder { transform: rotate(-2.6deg) scale(1.12); }
-  .case-clothesline { top: 65%; height: 33%; }
+  .case-clothesline { top: 64%; height: 34%; gap: 3%; }
   .case-clothesline:has(.nittany-trade-card) { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2.5%; }
-  .scene { min-height: 865px; }
+  .scene { min-height: 920px; }
   .archive-statement { max-width: 70%; }
   .archive-statement > strong { font-size: 1.65cqw; }
   .archive-statement p:not(.signature) { max-width: 52ch; line-height: 1.4; }
   .folder-paper .ink-investigator { width: 28%; right: 4%; }
 }
 @media (min-width: 661px) and (max-width: 1199px) {
-  .scene { min-height: 1080px; }
+  .scene { min-height: 1140px; }
   .case-preview { grid-template-columns: minmax(0, 220px); justify-content: center; }
   .case-clothesline { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); top: 49%; height: 49%; gap: 24px 4%; }
   .case-clothesline:has(.nittany-trade-card) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -435,7 +435,7 @@ body.compact-menu-open::after { background: #171b16bd; }
 @media (max-width: 660px) {
   .case-clothesline { grid-template-columns: minmax(0, 1fr); }
   .synthetic-uat-card .case-preview { width: min(100%, 220px); justify-self: center; }
-  .hanging-case { height: 264px; }
+  .hanging-case { height: 292px; }
   .hanging-case:nth-of-type(2)::before {
     content: '';
     position: absolute;
@@ -445,3 +445,26 @@ body.compact-menu-open::after { background: #171b16bd; }
     border-top: 1px solid #665b43;
   }
 }
+
+.about-contact {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.copy-email {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.copy-email-status {
+  flex-basis: 100%;
+  font-size: .8rem;
+}
+
+.copy-email-status:empty { display: none; }

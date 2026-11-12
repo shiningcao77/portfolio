@@ -159,3 +159,16 @@ if (dock && penToggle) {
   window.addEventListener('pageshow', updateDockForScroll);
   updateDockForScroll();
 }
+
+const copyEmail = document.querySelector('.copy-email');
+if (copyEmail) {
+  const copyStatus = document.querySelector('.copy-email-status');
+  copyEmail.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(copyEmail.textContent.trim());
+      copyStatus.textContent = 'Email copied.';
+    } catch {
+      copyStatus.textContent = 'Could not copy. Select the address to copy it manually.';
+    }
+  });
+}
