@@ -29,7 +29,7 @@
 .lamp-note{position:absolute;left:5%;bottom:-17%;font:italic 1cqw/1.35 Georgia,serif;transform:rotate(7deg);color:#b9a57c}
 .scattered{position:absolute;background:#d8c8a6 url("assets/paper-grain.svg");padding:1% 1% .7%;display:flex;flex-direction:column;gap:.7cqw;box-shadow:3px 5px 0 #a48b60,9px 16px 18px #100e0b99;transition:transform .35s,box-shadow .35s;color:#433522}
 .scattered img{width:100%;height:80%;min-height:0;object-fit:cover;filter:sepia(.35) saturate(.65) brightness(.89);border:1px solid #816e4b55}
-.scattered>span:last-child{display:flex;justify-content:space-between;font:.78cqw 'Courier New',monospace}.esia-evidence{left:23%;top:73%;width:16%;height:20%;transform:rotate(-13deg) translateZ(25px)}.mychart-evidence{left:43%;top:72%;width:19%;height:22%;transform:rotate(8deg) translateZ(28px)}
+.scattered>span:last-child{display:flex;justify-content:space-between;font:.78cqw 'Courier New',monospace}.grocery-evidence{left:23%;top:73%;width:16%;height:20%;transform:rotate(-13deg) translateZ(25px)}.mychart-evidence{left:43%;top:72%;width:19%;height:22%;transform:rotate(8deg) translateZ(28px)}
 .paperclip{position:absolute;left:8%;top:-11%;width:9%;height:33%;border:2px solid #958b65;border-radius:9px;transform:rotate(13deg);box-shadow:1px 2px 1px #0006}.paperclip:after{content:"";position:absolute;inset:2px 2px 7px;border:1px solid #5d573c;border-radius:5px}
 .tape{position:absolute;top:-6%;left:33%;height:14%;width:35%;background:#b7a47aaf;transform:rotate(-7deg);box-shadow:inset 0 0 8px #d8c8a266;z-index:1}
 .field-note{position:absolute;left:7%;top:80%;width:12%;height:15%;padding:1.2%;background:#c3b07d url("assets/paper-grain.svg");transform:rotate(7deg) translateZ(15px);box-shadow:4px 7px 9px #0d0b0966;color:#4e3d24}.field-note>span{font:.57cqw 'Courier New',monospace}.field-note p{font:italic 1.4cqw/1.1 Georgia,serif;margin:8% 0}.field-note small{font:.56cqw Georgia,serif}
@@ -55,7 +55,7 @@
 @keyframes dustdrift{0%{opacity:0;transform:translateY(10px)}30%{opacity:.25}80%{opacity:.15}100%{opacity:0;transform:translate(25px,-85px)}}
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
  .scene:not(.motion-paused) .scene-card:hover,.scene:not(.motion-paused) .scene-card:focus-visible{transform:rotate(-1deg) scale(1.045);box-shadow:4px 7px 12px #5b3f3455}
- .scene:not(.motion-paused) .esia-evidence:hover,.scene:not(.motion-paused) .esia-evidence:focus-visible{transform:rotate(-10deg) translateZ(30px) scale(1.045);box-shadow:11px 22px 22px #100c0a99}
+ .scene:not(.motion-paused) .grocery-evidence:hover,.scene:not(.motion-paused) .grocery-evidence:focus-visible{transform:rotate(-10deg) translateZ(30px) scale(1.045);box-shadow:11px 22px 22px #100c0a99}
  .scene:not(.motion-paused) .mychart-evidence:hover,.scene:not(.motion-paused) .mychart-evidence:focus-visible{transform:rotate(5deg) translateZ(33px) scale(1.045);box-shadow:11px 22px 22px #100c0a99}
 }
 @media(min-width:1500px){.scene{max-width:1600px;margin:auto}}
@@ -74,7 +74,7 @@
 .notebook-links{gap:.45cqw;margin-top:9%}
 .notebook-links a{padding:1% 0}
 .notebook-signature{position:absolute;bottom:5%;margin:0;font-size:1.2cqw}
-.esia-evidence{top:78%;height:17%;width:15%;left:25%}
+.grocery-evidence{top:78%;height:17%;width:15%;left:25%}
 .mychart-evidence{top:78%;height:18%;width:18%;left:44%}
 .field-note{top:83%;height:13%}
 .coffee-object{top:72%;height:20%}
