@@ -85,14 +85,57 @@
 .scene-home .about p{font-size:14px}
 }
 
-/* Cool white paper and graphite details for the homepage. */
-.scene-home{--page-stock:#f1f3f4;--paper:#f1f3f4;color:#282d32}
-.scene-home .folder-paper{  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 380' preserveAspectRatio='none'%3E%3Cpath d='M7 5 C87 1 149 5 221 4 S337 1 419 4 S549 3 632 5 Q638 5 637 12 C635 55 639 101 636 148 S639 234 637 274 Q635 325 638 371 Q638 376 632 376 C556 378 496 374 426 377 S284 375 217 377 S85 374 8 377 Q2 377 3 370 C4 322 1 289 3 244 S1 161 3 117 S1 45 3 13 Q3 6 7 5Z' fill='%23fafbfc' stroke='%23222' stroke-width='1.5' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;}
-.scene-home .folder-pages,.scene-home .folder-label,.scene-home .archive-tabs a{background-color:#fafbfc}
-.scene-home .case-face,.scene-home .resume-button{background:#fff;color:#282d32}
-.scene-home .case-preview{background:#e9edf0;border-color:#a5adb5}
-.scene-home .clothes-peg{background:#d8dee3;border-color:#68717a}
-.scene-home .clothes-peg::after{border-color:#68717a}
-.scene-home .desk-surface{background:repeating-linear-gradient(0deg,transparent 0 94px,#424d5909 95px,transparent 96px)}
-.scene-home .desk-dock.is-compact .dock-label{color:#282d32;text-shadow:0 0 8px #f1f3f4,0 0 16px #f1f3f4}
-.scene-home .motion-toggle{background:#fafbfc}
+/* Graphite desk and charcoal archive paper. */
+.scene-home{--desk-paper:#202724;--page-stock:#202724;--paper:#202724;--ink:#e0e5dc;--muted:#b4beb3;color:#e0e5dc;color-scheme:dark}
+.scene-home .scene{background:radial-gradient(ellipse at 60% 10%,#303b34 0,transparent 65%),#202724}
+.scene-home .folder-paper{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 380' preserveAspectRatio='none'%3E%3Cpath d='M7 5 C87 1 149 5 221 4 S337 1 419 4 S549 3 632 5 Q638 5 637 12 C635 55 639 101 636 148 S639 234 637 274 Q635 325 638 371 Q638 376 632 376 C556 378 496 374 426 377 S284 375 217 377 S85 374 8 377 Q2 377 3 370 C4 322 1 289 3 244 S1 161 3 117 S1 45 3 13 Q3 6 7 5Z' fill='%23333d36' stroke='%23949f92' stroke-width='1.5' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat;box-shadow:none;color:#e0e5dc}
+.scene-home .folder-pages,.scene-home .folder-label,.scene-home .archive-tabs a{background:#2d3731;border-color:#899585;color:#c8d4c5;box-shadow:none}
+.scene-home .folder-header,.scene-home .folder-footer{border-color:#86917e88}
+.scene-home .folder-header h1,.scene-home .folder-header h1 em,.scene-home .archive-statement strong{color:#e4e9df}
+.scene-home .archive-statement p:not(.signature){color:#ccd4c7}
+.scene-home .archive-statement .signature{color:#e9a391}
+.scene-home .folder-header .confidential-stamp{color:#eea695}
+.scene-home .folder-label,.scene-home .annotation{color:#abc5c9;fill:#abc5c9}
+.scene-home .folder-footer{color:#b5c0ae}
+.scene-home .case-face{background:#303a33;color:#e4e9df;border-color:#8f9a87;box-shadow:4px 6px 0 #10171244}
+.scene-home .case-role,.scene-home .case-front-copy .case-role{color:#e5ac99}
+.scene-home .case-blurb,.scene-home .case-back p,.scene-home .case-organization{color:#d1daca}
+.scene-home .case-caption{color:#c0cbb8}
+.scene-home .case-preview{background:#262e29;border-color:#677461}
+.scene-home .case-study-arrow{color:#e0e8d8;border-color:#8f9d82;background:#303a33}
+.scene-home .case-study-arrow:hover{background:#b9cba7;color:#202724}
+.scene-home .clothes-peg{background:#75806b;border-color:#b0b99d}
+.scene-home .clothes-peg::after{border-color:#c0c9ac}
+.scene-home .desk-surface{background:repeating-linear-gradient(0deg,transparent 0 94px,#c1ccaf08 95px,transparent 96px)}
+.scene-home .dock-label,.scene-home .desk-dock.is-compact .dock-label{color:#d2ddc9;text-shadow:none}
+.scene-home .desk-dock a:hover .dock-label{color:#efad98}
+.scene-home .desk-dock:before{border-color:#89957877}
+.scene-home .resume-button,.scene-home .motion-toggle{background:#29332d;border-color:#a2af97;color:#dee7d7}
+.scene-home .resume-button:hover,.scene-home .motion-toggle:hover{background:#445140;color:#fff}
+.scene-home .desk-controls{color:#bdcab3;border-color:#81917366}
+.scene-home .about{background:transparent;color:#dde6d5;border-color:#81917366}
+.scene-home .about h2,.scene-home .about p,.scene-home .about .label,.scene-home .footer,.scene-home .footer a,.scene-home .copy-email{color:#cdd9c5}
+.scene-home .ink-menu-toggle{color:#c8d6bb}
+.scene-home .ink-menu-toggle path[fill]{fill:#303a33}
+.scene-home .ink-investigator g{stroke:#d0dcc5}
+.scene-home .ink-investigator path[fill="#171717"]{fill:#becfb0}
+.scene-home .ink-investigator path[fill="white"]{fill:#3d4a40}
+.scene-home .ink-investigator ellipse{fill:#263029}
+.scene-home .ink-investigator path[stroke="#2463b6"]{stroke:#a6c5d1}
+.scene-home .ink-investigator path[stroke="#d56629"]{stroke:#e5a48d}
+.scene-home .archive-tabs a::after{background:#29342c;border-color:#a0ae92;color:#e4ebdd}
+.scene-home .archive-tabs a:hover{background:#52634a;color:#fff}
+.scene-home .archive-page-turn{background:#333d36;color:#e4e9df;border-color:#899585}
+.scene-home .hanging-case{--card-x:0deg;--card-y:0deg;transition:transform .3s ease,filter .3s ease}
+.scene-home .hanging-case:hover,.scene-home .hanging-case:focus-within{transform:perspective(1100px) rotateX(var(--card-x)) rotateY(var(--card-y)) translateY(-7px) scale(1.015);filter:drop-shadow(0 14px 12px #0b110d55);z-index:3}
+.scene-home .archive-tabs a{transition:translate .22s ease,background .22s ease}
+.scene-home .case-study-arrow{transition:background .2s ease,transform .2s ease}
+.scene-home .case-study-arrow:hover{transform:rotate(-12deg)}
+.scene-home .folder-paper{animation:file-arrival .7s ease-out both}
+.scene-home .hanging-case.reveal-ready{opacity:0;translate:0 22px}
+.scene-home .hanging-case.reveal-ready.is-visible{opacity:1;translate:0 0;transition:opacity .6s ease,translate .6s ease,transform .3s ease,filter .3s ease}
+.scene-home .scene.motion-paused *{animation:none!important;transition:none!important}
+.scene-home .scene.motion-paused .hanging-case{opacity:1;translate:none}
+.scene-home .scene.motion-paused .hanging-case:hover{transform:rotate(0deg);filter:none}
+@keyframes file-arrival{from{opacity:0;translate:0 15px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:reduce){.scene-home .scene *{animation:none!important;transition:none!important}.scene-home .hanging-case.reveal-ready{opacity:1;translate:none}.scene-home .hanging-case:hover{transform:none;filter:none}}
