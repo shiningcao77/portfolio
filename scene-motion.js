@@ -172,3 +172,17 @@ if (copyEmail) {
     }
   });
 }
+
+// Align the expanded navigation with the folder as its content reflows.
+const caseFolder = document.querySelector('.case-folder');
+if (dock && caseFolder) {
+  function alignDockWithFolder() {
+    const bounds = caseFolder.getBoundingClientRect();
+    dock.style.setProperty('--case-file-center', (bounds.top + window.scrollY + bounds.height / 2) + 'px');
+  }
+  alignDockWithFolder();
+  window.addEventListener('resize', alignDockWithFolder);
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(alignDockWithFolder).observe(caseFolder);
+  }
+}

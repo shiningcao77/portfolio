@@ -197,3 +197,6 @@ html[data-theme="light"] .scene-home .archive-tabs a::after,html[data-theme="lig
 html[data-theme="light"] .scene-home a:focus-visible,html[data-theme="light"] .scene-home button:focus-visible{outline-color:#80412d}
 .theme-toggle{position:fixed;top:max(16px,env(safe-area-inset-top));right:20px;z-index:35}
 @media(max-width:760px){.scene-home .desk-dock:not(.is-compact){top:64px}.scene-home .scene{padding-top:170px}}
+@media(min-width:761px){
+.scene-home .desk-dock:not(.is-compact){top:var(--case-file-center,290px);transform:translateY(-50%)}
+}
