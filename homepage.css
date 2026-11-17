@@ -1,5 +1,5 @@
 /* Keep the illustrated archive, give its contents a normal document flow. */
-.scene-home{--desk-paper:#f7f3e9;background:var(--desk-paper)}
+.scene-home{--desk-paper:#f1f3f4;background:var(--desk-paper)}
 .scene-home .scene-wrap{overflow:hidden;padding:0 28px}
 .scene-home .scene{width:100%;max-width:1240px;min-height:0;max-height:none;aspect-ratio:auto;padding:76px 0 54px;background:var(--desk-paper);container-type:inline-size}
 .scene-home .scene-plane{position:relative;inset:auto;display:block;transform:none!important}
@@ -84,3 +84,15 @@
 .scene-home .about h2{font-size:32px}
 .scene-home .about p{font-size:14px}
 }
+
+/* Cool white paper and graphite details for the homepage. */
+.scene-home{--page-stock:#f1f3f4;--paper:#f1f3f4;color:#282d32}
+.scene-home .folder-paper{  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 380' preserveAspectRatio='none'%3E%3Cpath d='M7 5 C87 1 149 5 221 4 S337 1 419 4 S549 3 632 5 Q638 5 637 12 C635 55 639 101 636 148 S639 234 637 274 Q635 325 638 371 Q638 376 632 376 C556 378 496 374 426 377 S284 375 217 377 S85 374 8 377 Q2 377 3 370 C4 322 1 289 3 244 S1 161 3 117 S1 45 3 13 Q3 6 7 5Z' fill='%23fafbfc' stroke='%23222' stroke-width='1.5' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;}
+.scene-home .folder-pages,.scene-home .folder-label,.scene-home .archive-tabs a{background-color:#fafbfc}
+.scene-home .case-face,.scene-home .resume-button{background:#fff;color:#282d32}
+.scene-home .case-preview{background:#e9edf0;border-color:#a5adb5}
+.scene-home .clothes-peg{background:#d8dee3;border-color:#68717a}
+.scene-home .clothes-peg::after{border-color:#68717a}
+.scene-home .desk-surface{background:repeating-linear-gradient(0deg,transparent 0 94px,#424d5909 95px,transparent 96px)}
+.scene-home .desk-dock.is-compact .dock-label{color:#282d32;text-shadow:0 0 8px #f1f3f4,0 0 16px #f1f3f4}
+.scene-home .motion-toggle{background:#fafbfc}
