@@ -9,6 +9,7 @@ try {
 function updateMotion() {
   const paused = reducedMotion.matches || pausedByVisitor;
   scene.classList.toggle('motion-paused', paused);
+  document.body.classList.toggle('motion-paused', paused);
   motionButton.setAttribute('aria-pressed', String(paused));
   motionButton.textContent = paused ? 'Motion paused' : 'Pause motion';
   motionButton.disabled = reducedMotion.matches;
