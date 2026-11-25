@@ -1,0 +1,50 @@
+/* Expressive headings, lighter typewritten reading text. */
+@font-face{font-family:'Special Elite';src:url('assets/fonts/SpecialElite-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+.scene-home{--reading-ink:#e3d6c6;--secondary-ink:#c1b3a5}
+html[data-theme="light"] .scene-home{--reading-ink:#51473e;--secondary-ink:#6c5b4e}
+.scene-home .folder-header h1,.scene-home .folder-header h1 em,.scene-home .archive-statement .signature,.scene-home .case-front-copy h2,.scene-home .case-back h2,.scene-home .about h2{font-family:'Special Elite','Courier New',monospace!important;font-weight:400;font-synthesis:none}
+.scene-home .archive-statement p:not(.signature),.scene-home .folder-landing .archive-statement>strong,.scene-home .case-front-copy .case-role,.scene-home .case-front-copy .case-blurb,.scene-home .case-back p,.scene-home .about p:not(.label){font-family:'Courier New',Courier,monospace!important;font-weight:400;font-synthesis:none;letter-spacing:0}
+.scene-home .folder-landing .folder-header h1{font-size:clamp(32px,3.6vw,48px);line-height:1.2}
+.scene-home .folder-landing .archive-statement .signature{font-size:clamp(30px,2.8vw,36px);line-height:1.3;margin-bottom:16px}
+.scene-home .folder-landing .archive-statement>strong,html[data-theme="light"] .scene-home .folder-landing .archive-statement>strong{font-size:14px;line-height:1.6;letter-spacing:.035em;color:var(--secondary-ink);margin-bottom:24px}
+.scene-home .folder-landing .archive-statement p:not(.signature),html[data-theme="light"] .scene-home .folder-landing .archive-statement p:not(.signature){font-size:17px;line-height:1.9;color:var(--reading-ink);max-width:45ch}
+.scene-home .case-front-copy h2{font-size:26px;line-height:1.25}
+.scene-home .case-front-copy .case-role,html[data-theme="light"] .scene-home .case-front-copy .case-role{font-size:14px;line-height:1.5;color:var(--secondary-ink)}
+.scene-home .case-front-copy .case-blurb,.scene-home .case-back p{font-size:16px;line-height:1.7}
+.scene-home .case-front{grid-template-rows:minmax(0,1fr) 156px}
+.scene-home .about h2{font-size:40px;line-height:1.25}
+.scene-home .about p:not(.label),html[data-theme="light"] .scene-home .about p:not(.label){font-size:18px;line-height:1.9;color:var(--reading-ink)}
+@media(max-width:760px){.scene-home .case-front{grid-template-rows:minmax(0,1fr) 188px}.scene-home .folder-landing .folder-header h1{font-size:30px}.scene-home .folder-landing .archive-statement p:not(.signature),html[data-theme="light"] .scene-home .folder-landing .archive-statement p:not(.signature){font-size:16px}.scene-home .about h2{font-size:34px}.scene-home .about p:not(.label),html[data-theme="light"] .scene-home .about p:not(.label){font-size:16px}}
+
+/* Cornell red and a quieter, more open introduction. */
+.scene-home{--cornell-red:#b31b1b}
+.scene-home .folder-landing .folder-header h1,.scene-home .folder-landing .folder-header h1 em,html[data-theme="light"] .scene-home .folder-landing .folder-header h1,html[data-theme="light"] .scene-home .folder-landing .folder-header h1 em{color:var(--cornell-red);letter-spacing:.025em}
+html[data-theme="dark"] .scene-home .folder-landing .folder-header h1,html[data-theme="dark"] .scene-home .folder-landing .folder-header h1 em{color:#f06b63}
+.scene-home .folder-landing .archive-statement>strong,html[data-theme="light"] .scene-home .folder-landing .archive-statement>strong{font-size:18px;line-height:1.6;letter-spacing:.055em;color:var(--reading-ink);margin:0 0 24px}
+.scene-home .folder-landing .archive-statement p:not(.signature),html[data-theme="light"] .scene-home .folder-landing .archive-statement p:not(.signature),.scene-home .case-front-copy .case-blurb,.scene-home .case-back p,.scene-home .about p:not(.label),html[data-theme="light"] .scene-home .about p:not(.label){letter-spacing:.035em}
+.scene-home .case-front-copy h2,.scene-home .case-back h2,.scene-home .about h2{letter-spacing:.025em}
+.scene-home .case-front-copy .case-role,html[data-theme="light"] .scene-home .case-front-copy .case-role{letter-spacing:.04em}
+.scene-home .ink-menu-toggle,html[data-theme="light"] .scene-home .ink-menu-toggle{top:50%;transform:translateY(-50%) rotate(12deg);color:var(--cornell-red)}
+.scene-home .ink-menu-toggle path[fill],html[data-theme="light"] .scene-home .ink-menu-toggle path[fill]{fill:var(--cornell-red)}
+.scene-home .ink-menu-toggle svg g{stroke:#fff7f0}
+.scene-home .desk-dock.is-compact{top:50%;transform:translateY(-50%);max-height:calc(100svh - 48px);overflow-y:auto}
+@media(max-width:760px){.scene-home .folder-landing .archive-statement>strong,html[data-theme="light"] .scene-home .folder-landing .archive-statement>strong{font-size:16px;letter-spacing:.035em}}
+
+/* Statement first, with a smaller academic sign-off. */
+.scene-home .folder-landing .folder-content{align-content:start;padding-top:44px}
+.scene-home .folder-landing .archive-statement p.study-note,html[data-theme="light"] .scene-home .folder-landing .archive-statement p.study-note{font-size:14px;line-height:1.6;letter-spacing:.035em;color:var(--secondary-ink);margin-top:24px}
+html[data-theme="light"] .scene-home .ink-menu-toggle path[fill]{stroke:#222;stroke-width:1.7}
+
+/* A feathered pool around the pen and menu, rather than a page-wide veil. */
+body.scene-home.compact-menu-open::after{inset:auto;left:-48px;top:50%;width:min(540px,calc(100vw + 64px));height:min(720px,110svh);transform:translateY(-50%);background:transparent;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);mask-image:radial-gradient(ellipse 80% 50% at 10% 50%,#000 0 56%,#000e 70%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 50% at 10% 50%,#000 0 56%,#000e 70%,transparent 100%);border-radius:0}
+@media(max-width:760px){.scene-home .folder-landing .folder-content{padding-top:28px}.scene-home .folder-landing .archive-statement p.study-note,html[data-theme="light"] .scene-home .folder-landing .archive-statement p.study-note{font-size:14px}body.scene-home.compact-menu-open::after{left:-52px;width:min(420px,calc(100vw + 64px))}}
+
+html[data-theme="light"] .scene-home .ink-menu-toggle:focus-visible{outline-color:#222}
+
+/* Blur only: keep menu text legible in each theme without a dark veil. */
+body.scene-home.compact-menu-open .desk-dock.is-compact .dock-label{color:#f0e6d8;text-shadow:none}
+html[data-theme="light"] body.scene-home.compact-menu-open .desk-dock.is-compact .dock-label{color:var(--cornell-red);text-shadow:none}
+body.scene-home.compact-menu-open .desk-dock.is-compact a:hover .dock-label,html[data-theme="light"] body.scene-home.compact-menu-open .desk-dock.is-compact a:hover .dock-label{color:var(--cornell-red)}
+
+html[data-theme="light"] .scene-home .dock-label{color:var(--cornell-red)}
+html[data-theme="light"] .scene-home .desk-dock a:hover .dock-label{color:#8f1515}

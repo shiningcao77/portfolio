@@ -1,6 +1,7 @@
-let archiveTheme = 'dark';
+let archiveTheme = 'light';
 try {
-  if (localStorage.getItem('archive-theme') === 'light') archiveTheme = 'light';
+  const savedTheme = localStorage.getItem('archive-theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') archiveTheme = savedTheme;
 } catch {}
 document.documentElement.dataset.theme = archiveTheme;
 
