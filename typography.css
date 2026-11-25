@@ -48,3 +48,13 @@ body.scene-home.compact-menu-open .desk-dock.is-compact a:hover .dock-label,html
 
 html[data-theme="light"] .scene-home .dock-label{color:var(--cornell-red)}
 html[data-theme="light"] .scene-home .desk-dock a:hover .dock-label{color:#8f1515}
+
+/* Neutral navigation and pen details; red is reserved for project numbers. */
+html[data-theme="light"] .scene-home .ink-menu-toggle svg g{stroke:#222}
+html[data-theme="light"] .scene-home .dock-label,html[data-theme="light"] .scene-home .desk-dock a:hover .dock-label,html[data-theme="light"] body.scene-home.compact-menu-open .desk-dock.is-compact .dock-label,html[data-theme="light"] body.scene-home.compact-menu-open .desk-dock.is-compact a:hover .dock-label{color:#222}
+.scene-home .theme-toggle:focus-visible{outline:2px solid currentColor;outline-offset:4px;box-shadow:none}
+.scene-home .theme-toggle:focus:not(:focus-visible){outline:none;box-shadow:none}
+.scene-home .archive-tabs a,html[data-theme="light"] .scene-home .archive-tabs a{color:var(--cornell-red)}
+html[data-theme="dark"] .scene-home .archive-tabs a{color:#f06b63}
+html[data-theme="light"] .scene-home .archive-tabs a:hover{background:#eee7df;color:var(--cornell-red)}
+html[data-theme="light"] .scene-home a:focus-visible,html[data-theme="light"] .scene-home button:focus-visible{outline-color:#222}
