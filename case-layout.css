@@ -1,0 +1,22 @@
+/* Shared case-study hierarchy: title 46px, section titles 24px, body 16px. */
+.case{--case-title-size:46px;--case-heading-size:24px;--case-body-size:16px}
+.case .case-hero h1{font-size:var(--case-title-size);font-weight:400;line-height:1.2;letter-spacing:.01em;max-width:100%;overflow-wrap:break-word}
+.case h2,.case h3,.case h4,.case-detail h2,.chapter h2,.overview h2,.feature-story h3,.decision-details h3,.cornell-case #validation h3{font-size:var(--case-heading-size);font-weight:400;line-height:1.4;letter-spacing:0}
+.case p:not(.label):not(.kicker),.case .lede,.case .case-intro,.case .case-hero .lede,.case li,.case dd,.case .feature-story dd,.case .testing-tasks,.case .study-summary p,.case .decision-details p,.case .chapter div>p:not(.label),.case .overview p:not(.label){font-size:var(--case-body-size);line-height:1.8;letter-spacing:0}
+.case .label{font-size:14px;line-height:1.5}
+.case figcaption{font-size:14px;line-height:1.6}
+.case .case-hero{padding-bottom:24px}
+.case .case-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 24px;margin:0 0 24px;padding:24px 0;border-block:1px solid #a89a87;align-items:start}
+.case .case-meta>div{min-width:0}
+.case .case-meta dt{margin-bottom:12px;color:#62574e;font-weight:700}
+.case .case-meta dd{margin:0;font-weight:400;overflow-wrap:anywhere}
+.case .metadata-todo{color:#743c2e}
+.case-context-notes{display:grid;gap:8px;margin:0 0 28px}
+.case .case-context-notes p{margin:0;font-size:14px;line-height:1.7;color:#62574e}
+.case-context-notes .label{margin-right:10px;font-weight:700}
+.case .overview h3{text-transform:none}
+.case .overview-grid{gap:28px}
+@media(max-width:900px){.case .case-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.case .case-meta{grid-template-columns:1fr;gap:24px}.case .case-hero h1{font-size:46px}.case .case-meta dt{margin-bottom:6px}}
+/* Keep the case-page navigation readable on narrow screens. */
+@media(max-width:660px){.nav{height:auto;flex-wrap:wrap;padding-block:16px;gap:14px}.nav .brand{white-space:normal}.nav nav{width:100%;justify-content:space-between}.nav nav a{min-height:44px;display:inline-flex;align-items:center}}
