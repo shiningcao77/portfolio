@@ -207,3 +207,27 @@ html[data-theme="light"] .scene-home .cornell-preview{color:#51473e}
 @media(max-width:760px){.scene-home .hanging-case:nth-of-type(n+5)::before{left:-10px;right:-10px;width:auto;top:-12px;height:0;border-radius:0}}
 
 html[data-theme="light"] .scene-home .archive-tabs a::after{background:#f6f2ec;color:#342d29}
+
+/* Give the introduction its own screen before the project collection. */
+.scene-home .scene{padding-top:0}
+.scene-home .folder-landing{min-height:100svh;box-sizing:border-box;display:flex;align-items:center;padding:124px 0 72px;position:relative}
+.scene-home .folder-landing .case-folder{width:84%;margin:0 5% 0 auto}
+.scene-home .folder-landing .folder-paper{min-height:clamp(480px,66svh,720px);box-sizing:border-box;display:flex;flex-direction:column;padding:40px 44px 26px}
+.scene-home .folder-landing .folder-header h1{font-size:clamp(32px,3.8vw,52px)}
+.scene-home .folder-landing .folder-content{flex:1;align-content:center;padding:32px 0 24px}
+.scene-home .folder-landing .archive-statement .signature{font-size:clamp(30px,3vw,40px)}
+.scene-home .folder-landing .archive-statement>strong{font-size:18px}
+.scene-home .folder-landing .archive-statement p:not(.signature){font-size:16px;line-height:1.9}
+.scene-home .folder-landing .folder-footer{margin-top:16px}
+.scene-home .case-clothesline{margin-top:48px;scroll-margin-top:88px}
+.scene-home #about{scroll-margin-top:88px}
+@media(max-width:760px){
+.scene-home .folder-landing{padding:222px 0 64px;min-height:100svh}
+.scene-home .folder-landing .case-folder{width:calc(100% - 44px);margin:0 44px 0 0}
+.scene-home .folder-landing .folder-paper{min-height:0;padding:28px 20px 22px}
+.scene-home .folder-landing .folder-header h1{font-size:30px}
+.scene-home .folder-landing .folder-content{padding:24px 0 8px}
+.scene-home .folder-landing .archive-statement .signature{font-size:30px}
+.scene-home .folder-landing .archive-statement>strong{font-size:16px}
+.scene-home .case-clothesline{margin-top:28px}
+}
