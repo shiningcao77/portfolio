@@ -34,16 +34,21 @@ if (scene && motionButton) {
 for (const card of document.querySelectorAll('.hanging-case')) {
   const front = card.querySelector('.case-front');
   const back = card.querySelector('.case-back');
-  for (const button of card.querySelectorAll('.case-flip')) {
-    button.addEventListener('click', () => {
-      const flipped = card.classList.toggle('is-flipped');
-      front.inert = flipped;
-      back.inert = !flipped;
-      (flipped ? back : front).querySelector('.case-flip').focus({ preventScroll: true });
-    });
+  function showBack(flipped) {
+    card.classList.toggle('is-flipped', flipped);
+    front.inert = flipped;
+    back.inert = !flipped;
   }
+  card.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'mouse' && matchMedia('(hover: hover)').matches) showBack(true);
+  });
+  card.addEventListener('pointerleave', () => {
+    if (!back.contains(document.activeElement)) showBack(false);
+  });
+  card.addEventListener('focusout', event => {
+    if (!card.contains(event.relatedTarget)) showBack(false);
+  });
 }
-
 
 const lamp = document.querySelector('.lamp-shade');
 if (scene && lamp) {
