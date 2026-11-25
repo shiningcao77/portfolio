@@ -131,7 +131,6 @@
 .scene-home .archive-tabs a{min-width:44px;min-height:44px}
 .scene-home .archive-tabs a::after{background:#342d29;border-color:#b1a08d;color:#f0e6d8}
 .scene-home .archive-tabs a:hover{background:#66503f;color:#fff}
-.scene-home .archive-page-turn{background:#3b342f;color:#f0e6d8;border-color:#b1a08d}
 .scene-home .hanging-case{height:450px;transition:transform .2s ease}
 .scene-home .case-front{grid-template-rows:minmax(0,1fr) 136px}
 .scene-home .hanging-case:hover,.scene-home .hanging-case:focus-within{transform:rotate(0deg) translateY(-3px)}
@@ -193,10 +192,18 @@ html[data-theme="light"] .scene-home .ink-investigator path[fill="white"]{fill:#
 html[data-theme="light"] .scene-home .ink-investigator ellipse{fill:#f6f2ec}
 html[data-theme="light"] .scene-home .ink-investigator path[stroke="#2463b6"]{stroke:#3e6264}
 html[data-theme="light"] .scene-home .ink-investigator path[stroke="#d56629"]{stroke:#944b34}
-html[data-theme="light"] .scene-home .archive-tabs a::after,html[data-theme="light"] .scene-home .archive-page-turn{background:#f6f2ec;color:#342d29}
 html[data-theme="light"] .scene-home a:focus-visible,html[data-theme="light"] .scene-home button:focus-visible{outline-color:#80412d}
 .theme-toggle{position:fixed;top:max(16px,env(safe-area-inset-top));right:20px;z-index:35}
 @media(max-width:760px){.scene-home .desk-dock:not(.is-compact){top:64px}.scene-home .scene{padding-top:170px}}
 @media(min-width:761px){
 .scene-home .desk-dock:not(.is-compact){top:var(--case-file-center,290px);transform:translateY(-50%)}
 }
+/* The fifth case starts a third row of the collected project files. */
+.scene-home .hanging-case:nth-of-type(n+5)::before{content:'';display:block;position:absolute;top:-24px;left:-10%;width:220%;height:24px;border-top:1px solid #b1a08d;border-radius:50%;pointer-events:none}
+.scene-home .cornell-preview{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:20px;padding:24px;border-style:dashed;color:#e3d6c6}
+.scene-home .cornell-preview-title{font-size:clamp(22px,2.5vw,32px);line-height:1.25}
+.scene-home .cornell-preview-note{font-size:13px;line-height:1.6}
+html[data-theme="light"] .scene-home .cornell-preview{color:#51473e}
+@media(max-width:760px){.scene-home .hanging-case:nth-of-type(n+5)::before{left:-10px;right:-10px;width:auto;top:-12px;height:0;border-radius:0}}
+
+html[data-theme="light"] .scene-home .archive-tabs a::after{background:#f6f2ec;color:#342d29}
