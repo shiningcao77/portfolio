@@ -231,3 +231,8 @@ html[data-theme="light"] .scene-home .archive-tabs a::after{background:#f6f2ec;c
 .scene-home .folder-landing .archive-statement>strong{font-size:16px}
 .scene-home .case-clothesline{margin-top:28px}
 }
+/* A quiet secondary entry keeps the main collection to five cases. */
+.scene-home .additional-work{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px 28px;margin-top:40px;font-size:16px;line-height:1.8;color:#e3d6c6}
+.scene-home .additional-work>span{font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+html[data-theme="light"] .scene-home .additional-work{color:#51473e}
+@media(max-width:760px){.scene-home .additional-work{flex-direction:column;gap:8px}}
