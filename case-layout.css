@@ -20,3 +20,45 @@
 @media(max-width:480px){.case .case-meta{grid-template-columns:1fr;gap:24px}.case .case-hero h1{font-size:46px}.case .case-meta dt{margin-bottom:6px}}
 /* Keep the case-page navigation readable on narrow screens. */
 @media(max-width:660px){.nav{height:auto;flex-wrap:wrap;padding-block:16px;gap:14px}.nav .brand{white-space:normal}.nav nav{width:100%;justify-content:space-between}.nav nav a{min-height:44px;display:inline-flex;align-items:center}}
+/* A shared, concise narrative for every case. */
+.case-restructured .case-hero .lede{max-width:72ch;margin-top:20px}
+.case-restructured .case-facts{margin-bottom:32px}
+.case-restructured>.artifact,.case-hero-visual{margin:0 0 32px}
+.case-restructured>.artifact img{width:100%;max-height:560px;object-fit:contain;background:#eeeae3}
+.case-restructured .case-section{padding:40px 0;border-top:1px solid #a89a87;scroll-margin-top:24px}
+.case-restructured .case-section>h2{margin:12px 0 20px;max-width:50ch}
+.case-restructured .case-section>p:not(.label),.decision-point p{max-width:78ch}
+.case-restructured .case-section>p+p{margin-top:14px}
+.case-restructured .case-section .label{color:#62574e}
+.case-restructured .decision-point{margin:24px 0}
+.case-restructured .decision-point h3{font-size:24px;margin:0 0 8px}
+.case-restructured .case-evidence{padding-left:22px;margin:20px 0}
+.case-restructured .case-evidence li+li{margin-top:12px}
+.case-restructured .chapter-nav{gap:8px 24px;margin-bottom:12px}
+.case-restructured .chapter-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:14px}
+.case-restructured .artifact{margin-top:24px;margin-bottom:24px}
+.case-restructured .artifact img{display:block;width:100%;height:auto;object-fit:contain}
+.case-restructured .solution-pair,.case-restructured .research-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.case-restructured .solution-pair>*{min-width:0}
+.case-restructured .supporting-evidence{margin:24px 0;border:1px solid #a89a87;border-radius:4px 9px 5px 6px;padding:16px 20px}
+.case-restructured .supporting-evidence summary{cursor:pointer;font-size:16px;line-height:1.7;min-height:44px;align-content:center}
+.case-restructured a:focus-visible,.case-restructured summary:focus-visible{outline:2px solid #302b25;outline-offset:5px}
+.case-restructured .image-placeholder{padding:16px;border:1px dashed #756956;border-radius:5px 11px 4px 8px}
+.case-restructured .placeholder-content{min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;padding:28px;background:#e8e2d8;color:#302b25}
+.case-restructured .placeholder-content strong{font-size:24px;line-height:1.4;font-weight:400}
+.case-restructured .placeholder-content p{max-width:54ch;margin:0}
+.case-restructured .feature-story{margin:28px 0 16px;border:1px solid #a89a87;border-radius:4px 9px 5px 7px;padding:24px}
+.case-restructured .feature-story h3{margin:0 0 20px}
+.case-restructured .feature-story dl{margin:0}
+.case-restructured .feature-story dl>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:12px 0;border-top:1px solid #a89a87}
+.case-restructured .feature-story dt{font-size:14px;line-height:1.6;font-weight:700;color:#62574e}
+.case-restructured .feature-story dd{margin:0}
+.case-hero-visual figcaption{margin-top:12px}
+@media(max-width:660px){
+.case-restructured .solution-pair,.case-restructured .research-gallery{grid-template-columns:1fr;gap:0}
+.case-restructured .case-section{padding:28px 0}
+.case-restructured .feature-story{padding:16px}
+.case-restructured .feature-story dl>div{grid-template-columns:1fr;gap:6px}
+.case-restructured .placeholder-content{min-height:190px;padding:24px 12px}
+.case-restructured .image-placeholder{padding:10px}
+}
