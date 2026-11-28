@@ -63,3 +63,13 @@
 .case-restructured .image-placeholder{padding:10px}
 }
 .case-restructured .case-disclosure{margin:0 0 24px;padding:14px 18px;border-left:3px solid #7b6c5e;background:#ede7df;color:#51473e;font-size:14px;line-height:1.7}
+/* Keep the first-comparison cohorts explicit and readable on small screens. */
+.comparison-results-wrap{margin:24px 0;overflow-x:auto}
+.comparison-results{width:100%;border-collapse:collapse;table-layout:fixed;font-size:16px;line-height:1.7}
+.comparison-results caption{text-align:left;padding-bottom:12px;font-size:16px}
+.comparison-results th,.comparison-results td{padding:16px 14px;border:1px solid #a89a87;text-align:left;vertical-align:top;overflow-wrap:break-word}
+.comparison-results th:first-child{width:46%}
+.comparison-results thead{background:#ede7df}
+.comparison-results th{font-weight:600}
+.comparison-results-wrap:focus-visible{outline:2px solid #302b25;outline-offset:5px}
+@media(max-width:480px){.comparison-results th,.comparison-results td{padding:10px 6px}.comparison-results th:first-child{width:40%}}
