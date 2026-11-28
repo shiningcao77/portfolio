@@ -58,3 +58,5 @@ html[data-theme="light"] .scene-home .dock-label,html[data-theme="light"] .scene
 html[data-theme="dark"] .scene-home .archive-tabs a{color:#f06b63}
 html[data-theme="light"] .scene-home .archive-tabs a:hover{background:#eee7df;color:var(--cornell-red)}
 html[data-theme="light"] .scene-home a:focus-visible,html[data-theme="light"] .scene-home button:focus-visible{outline-color:#222}
+/* Let the two longer case summaries determine their own text row height. */
+.scene-home .synthetic-uat-card .case-front,.scene-home .emmys-card .case-front{grid-template-rows:minmax(140px,1fr) auto}
